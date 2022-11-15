@@ -1,4 +1,6 @@
 const alphabet = "abcdefghijklmnopqrstuvwxyz`*".split('');
+let cameraX = 0, cameraY = 0;
+
 
 function setup() {
   createCanvas(400, 400);
@@ -8,6 +10,7 @@ function draw() {
   background(220);
   let x = width/2;
   let y = width/2;
+  translate(cameraX, cameraY);
   const unitLength = 10;
 
   for (let key in input) {
