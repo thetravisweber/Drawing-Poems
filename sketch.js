@@ -1,4 +1,4 @@
-const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+const alphabet = 'abcdefghijklmnopqrstuvwxyz.!'.split('');
 
 function setup() {
   createCanvas(400, 400);
@@ -20,10 +20,12 @@ function draw() {
     x = newX; 
     y = newY;
   }
+
+  drawKey();
 }
 
 function getCharAngle(character) {
-  return map(alphabet.indexOf(character), 0, 26, TWO_PI, 0);
+  return map(alphabet.indexOf(character.toLowerCase()), 0, 28, TWO_PI, 0);
 }
 
 function drawKey()
