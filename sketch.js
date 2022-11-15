@@ -8,21 +8,25 @@ function setup() {
 
 function draw() {
   background(220);
-  let x = width/2;
-  let y = width/2;
   translate(cameraX, cameraY);
   const unitLength = 10;
 
-  for (let key in input) {
-    let word = input[key];
-    if (word.length > 0) {
-      let angle = getCharAngle(word[0]);
-      let dist = unitLength * word.length;
-      let newX = cos(angle) * dist + x;
-      let newY = sin(angle) * dist + y;
-      line(x,y,newX,newY);
-      x = newX; 
-      y = newY;
+  for (let rowKey in input)
+  {
+    let x = width/2;
+    let y = width/2;
+    const row = input[rowKey];
+    for (let key in row) {
+      let word = row[key];
+      if (word.length > 0) {
+        let angle = getCharAngle(word[0]);
+        let dist = unitLength * word.length;
+        let newX = cos(angle) * dist + x;
+        let newY = sin(angle) * dist + y;
+        line(x,y,newX,newY);
+        x = newX; 
+        y = newY;
+      }
     }
   }
 }

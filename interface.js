@@ -7,7 +7,8 @@ let lastMouse = {
 
 function updated()
 {
-  input = document.getElementById("userinput").value.split(' ');
+  input = document.getElementById("userinput").value.split('\n')
+      .map(row => row.split(" "));
 }
 
 
