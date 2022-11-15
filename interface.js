@@ -13,11 +13,16 @@ function updated()
 
 
 function mouseDragged(e) {
-  if (lastMouse.valid) {
+  if (lastMouse.valid && mouseIsOnCanvas()) {
     cameraX += mouseX - lastMouse.x;
     cameraY += mouseY - lastMouse.y;
   }
   updateMouse();
+}
+
+function mouseIsOnCanvas()
+{
+  return (mouseX < width) && (mouseY < height)
 }
 
 function updateMouse() {
