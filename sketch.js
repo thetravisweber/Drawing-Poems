@@ -20,8 +20,6 @@ function draw() {
     x = newX; 
     y = newY;
   }
-
-  drawKey();
 }
 
 function getCharAngle(character) {
