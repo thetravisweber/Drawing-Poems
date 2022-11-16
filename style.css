@@ -4,12 +4,13 @@ html, body {
 }
 
 canvas {
-  display: block;
+  display: inline-block;
   order: 1;
 }
 
 #notCanvas {
   order: 2;
+  display: inline-block;
   width: 100%;
 }
 
